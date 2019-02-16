@@ -1,5 +1,8 @@
-// 
+
+
 const weather = new Weather('98058', 'us');
+
+const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
@@ -10,6 +13,7 @@ function getWeather() {
 	weather.getWeather()
 		.then(function (results) {
 			console.log(results);
+			ui.paint(results);
 		})
 		.catch(function (err) {
 			console.log(err);
