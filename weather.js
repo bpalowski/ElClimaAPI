@@ -8,18 +8,12 @@ class Weather {
 
 	async getWeather() {
 		const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.zip},${this.country}&appid=${this.appid}`);
-
-
-
 		const data = await response.json();
-
 		return data;
 	}
-
-	changeWeather(zip, country) {
+	changeWeatherLocation(zip, country) {
 		this.zip = zip;
 		this.country = country;
-
 	}
 
 
